@@ -1,0 +1,34 @@
+<h2>Savory Pies</h2>
+<div class="pie-container">
+    <h4>Add New Pie</h4>
+    <form ng-submit="uploadPie()">
+        <label for="image">Image</label>
+        <input id="image" type="file" accept="image/*" required ngf-select ng-model="imageToUpload">
+        <label for="title">Title</label>
+        <input id="title" type="text" required ng-model="newPie.title">
+        <label for="description">Description</label>
+        <textarea id="description" required ng-model="newPie.description"></textarea>
+        <label for="price">Price</label>
+        <input id="price" type="text" required ng-model="newPie.price">
+        <button type="submit">Add Pie</button>
+    </form>
+    <h5 ng-class="{ error:message.isError}">{{message.text}}</h5>
+    <h5>{{progress}}</h5>
+</div>
+
+<h2>Savory Pies List</h2>
+<div ng-repeat="pie in siteData.galleries.savoryPies" class="pie-container">
+    <label>Image</label>
+    <img ng-src="../img/{{pie.image}}">
+    <label>Title</label>
+    <input type="text" ng-model="pie.title">
+    <label>Description</label>
+    <textarea ng-model="pie.description"></textarea>
+    <label>Price</label>
+    <input type="text" ng-model="pie.price">
+    <div class="array-buttons">
+        <button ng-click="changeArray('delete', siteData.galleries.savoryPies, $index)">Delete Pie</button>
+        <button ng-click="changeArray('move up', siteData.galleries.savoryPies, $index)">Move Pie Up</button>
+        <button ng-click="changeArray('move down', siteData.galleries.savoryPies, $index)">Move Pie Down</button>
+    </div>
+</div>

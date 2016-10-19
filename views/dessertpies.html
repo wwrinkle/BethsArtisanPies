@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-xs-12">
+        <p ng-repeat="paragraph in siteData.text.thePies.paragraphs track by $index">{{paragraph}}</p>
+    </div>
+</div>
+
+<div class="pies">
+    <div class="row">
+        <div ng-repeat="pie in siteData.galleries.sweetPies">
+            <div class="col-sm-6">
+                <img class="img-responsive" ng-src="./img/{{pie.image}}">
+                <p><span>{{pie.title}}</span> – {{pie.description}}</p>
+                <p class="price">{{pie.price}}</p>
+            </div>
+            <div ng-if="$index % 2 != 0" class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <h1>Special Orders</h1>
+        <table class="table table-hover">
+            <tr ng-repeat="item in siteData.menu.specialOrders">
+                <td><span class="title">{{item.title}}</span><span ng-if="item.description"> - {{item.description}}</span></td>
+                <td class="price">{{item.price}}</td>
+            </tr>
+        </table>
+    </div>
+
+</div>

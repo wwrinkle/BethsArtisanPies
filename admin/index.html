@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Beth's Artisan Pies Admin</title>
+    <link href="css/admin.css" rel="stylesheet" type="text/css">
+    <!-- <script src="/../bethsartisanpies/js/angular.min.js"></script>
+    <script src="/../bethsartisanpies/js/angular-route.min.js"></script> -->
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/angular-route.min.js"></script>
+    <script src="js/ng-file-upload.min.js"></script>
+    <script src="js/admin.js"></script>
+
+    <base href="/bethsartisanpies/admin/">
+    <!-- <base href="/admin/"> -->
+
+
+</head>
+
+<body ng-app="AdminApp">
+
+    <nav>
+        <a href="admin">Admin</a>
+        <a href="home-carousel">Home Carousel</a>
+        <a href="the-pie-shop">The Pie Shop</a>
+        <a href="about-beth">About Beth</a>
+        <a href="the-pies">The Pies</a>
+        <a href="sweet-pies">Dessert Pies</a>
+        <a href="special-orders">Special Orders and Seasonal Pies</a>
+        <a href="savory-pies">Savory Pies</a>
+        <a href="lunch-menu">Lunch Menu</a>
+        <a href="brunch-menu">Brunch Menu</a>
+        <a href="sides-menu">Sides Menu</a>
+        <a href="order-online">Order Online</a>
+        <a href="contact">Contact</a>
+        <div ng-controller="SaveController">
+            <button id="save-btn" ng-click="save()">Save</button>
+            <p class="save-message" ng-class="{ error:message.isError }">{{message.text}}</p>
+        </div>
+
+    </nav>
+
+    <div ng-view>
+
+    </div>
+
+</body>
+
+</html>

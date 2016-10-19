@@ -1,0 +1,11 @@
+AuthType Basic
+AuthName "restricted area"
+AuthUserFile /Applications/XAMPP/xamppfiles/htdocs/bethsartisanpies/admin/.htpasswd
+require valid-user
+
+RewriteEngine on
+    RewriteCond %{REQUEST_FILENAME} -s [OR]
+    RewriteCond %{REQUEST_FILENAME} -l [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^.*$ - [NC,L]
+    RewriteRule ^(.*) /bethsartisanpies/admin/ [NC,L]

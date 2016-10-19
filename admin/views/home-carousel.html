@@ -1,0 +1,20 @@
+<h2>Home Carousel</h2>
+
+<div class="upload-image">
+    <h4>Upload Image</h4>
+    <form ng-submit="uploadImage()">
+        <label for="image">Image</label>
+        <input id="image" type="file" accept="image/*" required ngf-select ng-model="imageToUpload">
+        <button type="submit">Upload Image</button>
+    </form>
+    <h5 ng-class="{ error:message.isError}">{{message.text}}</h5>
+    <h5>{{progress}}</h5>
+</div>
+
+<h2>Carousel Images</h2>
+<div ng-repeat="image in siteData.galleries.homeCarousel" class="image-container">
+    <img ng-src="../img/{{image.image}}">
+    <button ng-click="changeArray('delete', siteData.galleries.homeCarousel, $index)">Delete Image</button>
+    <button ng-click="changeArray('move up', siteData.galleries.homeCarousel, $index)">Move Image Up</button>
+    <button ng-click="changeArray('move down', siteData.galleries.homeCarousel, $index)">Move Image Down</button>
+</div>

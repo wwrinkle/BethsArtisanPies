@@ -1,0 +1,12 @@
+<div class="pies">
+    <div class="row">
+        <div ng-repeat="pie in siteData.galleries.savoryPies">
+            <div class="col-sm-6">
+                <img class="img-responsive" ng-src="./img/{{pie.image}}">
+                <p><span>{{pie.title}}</span> – {{pie.description}}</p>
+                <p class="price">{{pie.price}}</p>
+            </div>
+            <div ng-if="$index % 2 != 0" class="clearfix"></div>
+        </div>
+    </div>
+</div>

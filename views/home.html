@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-xs-12">
+        <h1>The Pie Shop</h1>
+    </div>
+    <div class="col-md-4">
+        <div uib-carousel interval="4000" active="0" template-url="templates/carousel.html">
+            <div uib-slide ng-repeat="slide in siteData.galleries.homeCarousel" index="$index">
+                <img slide-image ng-src="./img/{{slide.image}}">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <p ng-repeat="paragraph in siteData.text.thePieShop.paragraphs track by $index">{{paragraph}}</p>
+    </div>
+</div>
+
+<div class="row about-beth-row">
+    <div class="col-xs-12">
+        <h1>About Beth</h1>
+    </div>
+    <div class="col-md-4">
+        <img class="img-responsive" ng-src="./img/{{siteData.text.aboutBeth.image}}">
+    </div>
+    <div class="col-md-8">
+        <p ng-repeat="paragraph in siteData.text.aboutBeth.paragraphs track by $index">{{paragraph}}</p>
+    </div>
+</div>

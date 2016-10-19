@@ -1,0 +1,17 @@
+<h2>About Beth</h2>
+
+<div class="upload-image">
+    <img ng-src="../img/{{siteData.text.aboutBeth.image}}">
+    <h3>Upload Different Image</h3>
+    <form ng-submit="uploadImage()">
+        <label for="image">Image</label>
+        <input id="image" type="file" accept="image/*" required ngf-select ng-model="imageToUpload">
+        <button type="submit">Upload Image</button>
+    </form>
+    <h5 ng-class="{ error:message.isError}">{{message.text}}</h5>
+    <h5>{{progress}}</h5>
+</div>
+
+<div class="paragraph-container">
+    <textarea ng-model="unformattedParagraphs.aboutBeth"></textarea>
+</div>

@@ -1,0 +1,27 @@
+<h2>Brunch Menu</h2>
+
+<div class="menu-item-container">
+    <h4>Add New Menu Item</h4>
+    <label>Title</label>
+    <input required type="text" ng-model="newMenuItem.title">
+    <label>Description</label>
+    <textarea ng-model="newMenuItem.description"></textarea>
+    <label>Price</label>
+    <input type="text" ng-model="newMenuItem.price">
+    <button class="add-menu-item" ng-click="addMenuItem()">Add Menu Item</button>
+</div>
+
+<h2>Brunch Menu Items</h2>
+<div class="menu-item-container" ng-repeat="menuItem in siteData.menu.brunch">
+    <label>Title</label>
+    <input type="text" ng-model="menuItem.title">
+    <label>Description</label>
+    <textarea ng-model="menuItem.description"></textarea>
+    <label>Price</label>
+    <input type="text" ng-model="menuItem.price">
+    <div class="array-buttons">
+        <button ng-click="changeArray('delete', siteData.menu.brunch, $index)">Delete Menu Item</button>
+        <button ng-click="changeArray('move up', siteData.menu.brunch, $index)">Move Menu Item Up</button>
+        <button ng-click="changeArray('move down', siteData.menu.brunch, $index)">Move Menu Item Down</button>
+    </div>
+</div>

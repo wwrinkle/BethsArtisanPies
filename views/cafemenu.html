@@ -1,0 +1,33 @@
+<div class="cafe-menu">
+
+    <div class="lunch-menu">
+        <div class="row">
+            <div class="col-xs-12">
+                <table class="table table-hover">
+                    <thead>
+                        <th>Lunch Menu</th>
+                    </thead>
+                    <tr ng-repeat="item in siteData.menu.lunch">
+                        <td><span class="title">{{item.title}}</span><span ng-if="item.description"> - {{item.description}}</span></td>
+                        <td class="price">{{item.price}}</td>
+                    </tr>
+                    <thead>
+                        <th>Sides</th>
+                    </thead>
+                    <tr ng-repeat="item in siteData.menu.sides">
+                        <td><span class="title">{{item.title}}</span><span ng-if="item.description"> - {{item.description}}</span></td>
+                        <td class="price">{{item.price}}</td>
+                    </tr>
+                    <thead>
+                        <th>Saturday Brunch Menu</th>
+                    </thead>
+                    <tr ng-repeat="item in siteData.menu.brunch">
+                        <td><span class="title">{{item.title}}</span><span ng-if="item.description"> - {{item.description}}</span></td>
+                        <td class="price">{{item.price}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

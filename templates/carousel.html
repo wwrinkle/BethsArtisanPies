@@ -1,0 +1,9 @@
+<div class="carousel-inner" ng-transclude ng-swipe-left="next()" ng-swipe-right="prev()"></div>
+<a role="button" href class="left carousel-control" ng-click="prev()" ng-class="{ disabled: isPrevDisabled() }" ng-show="slides.length > 1">
+    <i class="fa fa-angle-left" aria-hidden="true"></i>
+    <span class="sr-only">previous</span>
+</a>
+<a role="button" href class="right carousel-control" ng-click="next()" ng-class="{ disabled: isNextDisabled() }" ng-show="slides.length > 1">
+    <i class="fa fa-angle-right" aria-hidden="true"></i>
+    <span class="sr-only">next</span>
+</a>
